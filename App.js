@@ -38,7 +38,7 @@ export default function App() {
 
   function startNewGameHandler() {
     //reset everything
-    setUserNumber(true);
+    setUserNumber(null);
     setGuessRounds(0);
   }
 
