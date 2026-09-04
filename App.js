@@ -6,6 +6,7 @@ import GameScreen from "./screens/GameScreen";
 import GameOverScreen from "./screens/GameOverScreen";
 import Colors from "./constants/colors";
 import AppLoading from "expo-app-loading";
+import GuessLogItem from "./components/GuessLogItem";
 
 import { useFonts } from "expo-font";
 
