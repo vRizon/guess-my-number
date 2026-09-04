@@ -4,6 +4,8 @@ import Title from "../components/Title";
 import NumberContainer from "../components/NumberContainer";
 import PrimaryButton from "../components/PrimaryButton";
 import Card from "../components/Card";
+import InstructionText from "../components/InstructionText";
+import { Ionicons } from "@expo/vector-icons";
 
 //utility func generates random number
 function generateRandomBetween(min, max, exclude) {
@@ -65,16 +67,16 @@ export default function GameScreen({ userNumber, onGameOver }) {
       <Title>Guess My Number</Title>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card>
-        <Text>Higher or lower?</Text>
+        <InstructionText>Heigher or lower?</InstructionText>
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-              -
+              <Ionicons name="remove" size={24} color="white" />
             </PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-              +
+              <Ionicons name="add" size={24} color="white" />
             </PrimaryButton>
           </View>
         </View>
