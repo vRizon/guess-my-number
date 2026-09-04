@@ -4,7 +4,7 @@ A React Native game where you pick a secret number and the app tries to guess it
 
 ## Screenshots
  
-| Start Screen | Game Screen | Game Over |
+| Start Screen | Game Screen | Game Over Screen |
 |:---:|:---:|:---:|
 | <img src="./github/screenshots/img1.PNG" width="250"/> | <img src="./github/screenshots/img2.PNG" width="250"/> | <img src="./github/screenshots/img3.PNG" width="250"/> |
 
