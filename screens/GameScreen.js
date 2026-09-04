@@ -25,6 +25,7 @@ let maxBoundary = 100;
 export default function GameScreen({ userNumber, onGameOver }) {
   const initialGuess = generateRandomBetween(1, 100, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
+  const [guessRounds, setGuessRounds] = useState([initialGuess]);
 
   //useEffect runs after component func has been exec
   //check if game is over
@@ -34,6 +35,12 @@ export default function GameScreen({ userNumber, onGameOver }) {
       onGameOver();
     }
   }, [currentGuess, userNumber, onGameOver]);
+
+  useEffect(() => {
+    //to execute the first time component mounts
+    minBoundary = 1;
+    maxBoundary = 100;
+  }, []);
 
   //derives new random number
   function nextGuessHandler(direction) {
@@ -60,6 +67,7 @@ export default function GameScreen({ userNumber, onGameOver }) {
       currentGuess,
     );
     setCurrentGuess(newRndNumber);
+    setGuessRounds((prevGuessRounds) => [newRndNumber, ...prevGuessRounds]);
   }
 
   return (
@@ -81,6 +89,11 @@ export default function GameScreen({ userNumber, onGameOver }) {
           </View>
         </View>
       </Card>
+      <View>
+        {/* {guessRounds.map((guessRound) => (
+          <Text key={guessRound}>{guessRound}</Text>
+        ))} */}
+      </View>
     </View>
   );
 }
